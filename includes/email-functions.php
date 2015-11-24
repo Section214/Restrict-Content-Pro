@@ -189,6 +189,29 @@ function rcp_filter_email_tags( $message, $user_id, $display_name ) {
 	return apply_filters( 'rcp_email_tags', htmlspecialchars( $message ), $user_id );
 }
 
+function rcp_display_email_tags() {
+	$tags = apply_filters( 'rcp_available_email_tags', array(
+		'blogname' => __( 'will be replaced with the name of your site', 'rcp' ),
+		'username' => __( 'will be replaced with the user name of the person receiving the email', 'rcp' ),
+		'useremail' => __( 'will be replaced with the email of the person receiving the email', 'rcp' ),
+		'firstname' => __( 'will be replaced with the first name of the person receiving the email', 'rcp' ),
+		'lastname' => __( 'will be replaced with the last name of the person receiving the email', 'rcp' ),
+		'displayname' => __( 'will be replaced with the display name of the person receiving the email', 'rcp' ),
+		'expiration' => __( 'will be replaced with the expiration date of subscription', 'rcp' ),
+		'subscription_name' => __( 'will be replaced with the name of the subscription', 'rcp' ),
+		'subscription_key' => __( 'will be replaced with the unique, 32 character key created when the user is registered', 'rcp' ),
+		'amount' => __( 'will be replaced with the amount of the users last payment', 'rcp' )
+	) );
+
+	$html = '';
+
+	foreach( $tags as $tag => $desc ) {
+		$html .= '<em>' . $tag . '</em> - ' . $desc . '<br />';
+	}
+
+	return $html;
+}
+
 /**
  * Triggers the expiration notice when an account is marked as expired
  *

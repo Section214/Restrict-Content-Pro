@@ -149,6 +149,7 @@ if( version_compare( PHP_VERSION, '5.3', '<' ) ) {
 	*******************************************/
 
 	// global includes
+	include( RCP_PLUGIN_DIR . 'includes/admin/settings/register-settings.php' );
 	require( RCP_PLUGIN_DIR . 'includes/install.php' );
 	include( RCP_PLUGIN_DIR . 'includes/class-rcp-capabilities.php' );
 	include( RCP_PLUGIN_DIR . 'includes/class-rcp-integrations.php' );
@@ -195,7 +196,7 @@ if( version_compare( PHP_VERSION, '5.3', '<' ) ) {
 		include( RCP_PLUGIN_DIR . 'includes/admin/admin-ajax-actions.php' );
 		include( RCP_PLUGIN_DIR . 'includes/admin/screen-options.php' );
 		include( RCP_PLUGIN_DIR . 'includes/admin/members/members-page.php' );
-		include( RCP_PLUGIN_DIR . 'includes/admin/settings/settings.php' );
+		include( RCP_PLUGIN_DIR . 'includes/admin/settings/display-settings.php' );
 		include( RCP_PLUGIN_DIR . 'includes/admin/subscriptions/subscription-levels.php' );
 		include( RCP_PLUGIN_DIR . 'includes/admin/discounts/discount-codes.php' );
 		include( RCP_PLUGIN_DIR . 'includes/admin/payments/payments-page.php' );
@@ -208,6 +209,7 @@ if( version_compare( PHP_VERSION, '5.3', '<' ) ) {
 		include( RCP_PLUGIN_DIR . 'includes/user-page-columns.php' );
 		include( RCP_PLUGIN_DIR . 'includes/process-data.php' );
 		include( RCP_PLUGIN_DIR . 'includes/export-functions.php' );
+		include( RCP_PLUGIN_DIR . 'includes/license-functions.php' );
 		include( RCP_PLUGIN_DIR . 'RCP_Plugin_Updater.php' );
 
 		// retrieve our license key from the DB
