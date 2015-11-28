@@ -20,11 +20,11 @@ function rcp_admin_notices() {
 		echo '<div class="updated fade"><p>' . __( 'The Restrict Content Pro database has been updated', 'rcp' ) . '</p></div>';
 	}
 
-	/*if ( 'expired' === rcp_check_license() ) {
+	if ( 'expired' === rcp_check_license() ) {
 		echo '<div class="error info"><p>' . __( 'Your license key for Restrict Content Pro has expired. Please renew your license to re-enable automatic updates.', 'rcp' ) . '</p></div>';
 	} elseif ( 'valid' !== rcp_check_license() ) {
 		echo '<div class="notice notice-info"><p>' . sprintf( __( 'Please <a href="%s">enter and activate</a> your license key for Restrict Content Pro to enable automatic updates.', 'rcp' ), admin_url( 'admin.php?page=rcp-settings' ) ) . '</p></div>';
-	}*/
+	}
 
 	if( function_exists( 'rcp_register_stripe_gateway' ) ) {
 		$deactivate_url = add_query_arg( array( 's' => 'restrict+content+pro+-+stripe' ), admin_url( 'plugins.php' ) );
